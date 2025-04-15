@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { authService } from '../services/api';
+import '../styles/Navbar.css'
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -27,16 +28,16 @@ const Navbar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
         
-        <div className="collapse navbar-collapse" id="navbarNav">
+        <div className="collapse navbar-collapse navbar-collapse-right" id="navbarNav">
           <ul className="navbar-nav ms-auto">
             {isAuthenticated ? (
               <>
-                <li className="nav-item border-start">
+                <li className="nav-item">
                   <Link className="nav-link" to="/dashboard">Panel de empleados</Link>
                 </li>
                 <li className="nav-item">
                   <button 
-                    className="nav-link btn btn-link" 
+                    className="nav-link btn btn-link text-center w-100" 
                     onClick={handleLogout}
                   >
                     Cerrar Sesión

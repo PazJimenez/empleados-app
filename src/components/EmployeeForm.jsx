@@ -72,7 +72,6 @@ const EmployeeForm = () => {
       try {
         setDataLoading(true);
         const data = await employeeService.getDepartments();
-        console.log("Departamento", data);
         setDepartments(data);
       } catch (error) {
         console.error('Error loading departments:', error);
@@ -225,10 +224,14 @@ const EmployeeForm = () => {
       navigate('/dashboard');
     } catch (error) {
       console.error('Error saving employee:', error);
-      setSubmitError(
-        error.response?.data?.message || 
-        'Error al guardar la información. Por favor, intenta de nuevo.'
-      );
+      if (error.response?.status === 409) {
+        setSubmitError("Ya existe un empleado con ese correo, nombre u otro dato único.");
+      } else {
+        setSubmitError(
+          error.response?.data?.message || 
+          'Error al guardar la información. Por favor, intenta de nuevo.'
+        );
+      }
     } finally {
       setLoading(false);
     }

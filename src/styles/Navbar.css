@@ -1,0 +1,29 @@
+@media (max-width: 991.98px) {
+    .navbar-collapse-right {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      width: 200px;
+      padding: 10px;
+      background-color: rgba(222, 246, 231, 0.95); /* Esto mantiene un color similar a tu bg-success-subtle */
+      box-shadow: -2px 2px 5px rgba(0,0,0,0.1);
+      z-index: 1000;
+      text-align: right;
+      border-radius: 0 0 0 5px;
+    }
+    
+    /* Si quieres que los elementos del menú se alineen a la derecha también */
+    .navbar-collapse-right .navbar-nav {
+      text-align: center;
+    }
+    
+    /* Para mejorar el aspecto de los elementos del menú */
+    .navbar-collapse-right .nav-item {
+      padding: 5px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    
+    .navbar-collapse-right .nav-item:last-child {
+      border-bottom: none;
+    }
+  }

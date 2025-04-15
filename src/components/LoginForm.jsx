@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { authService } from '../services/api';
 import { useNavigate } from 'react-router-dom';
-import '../styles/LoginForm.css'; // Crearemos este archivo después
+import '../styles/LoginForm.css';
 
 const LoginForm = () => {
   const [credentials, setCredentials] = useState({

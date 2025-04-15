@@ -13,9 +13,10 @@ const Navbar = () => {
   };
   
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav className="navbar navbar-expand-lg sticky-top shadow-lg bg-success-subtle bg-gradient">
       <div className="container">
-        <Link className="navbar-brand" to="/">Sistema de Empleados</Link>
+        <Link className="navbar-brand" to="/"> <img src="/img/contratacion.png" width="30" height="30" alt=""></img>
+        Sistema de Empleados</Link>
         
         <button 
           className="navbar-toggler" 
@@ -30,8 +31,8 @@ const Navbar = () => {
           <ul className="navbar-nav ms-auto">
             {isAuthenticated ? (
               <>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/dashboard">Dashboard</Link>
+                <li className="nav-item border-start">
+                  <Link className="nav-link" to="/dashboard">Panel de empleados</Link>
                 </li>
                 <li className="nav-item">
                   <button 

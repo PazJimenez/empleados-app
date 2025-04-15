@@ -1,7 +1,7 @@
 // src/components/EmployeeList.jsx
 import React, { useState, useEffect } from 'react';
 import { employeeService } from '../services/api';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'; 
 
 const EmployeeList = () => {
   const [employees, setEmployees] = useState([]);
@@ -77,7 +77,7 @@ const EmployeeList = () => {
     <div className="container mt-4">
       <div className="d-flex justify-content-between align-items-center mb-4">
         <h2>Lista de Empleados</h2>
-        <Link to="/employees/new" className="btn btn-success">
+        <Link to="/employees/new" className="btn btn-success bg-gradient">
           <i className="bi bi-plus-circle"></i> Nuevo Empleado
         </Link>
       </div>
@@ -85,9 +85,9 @@ const EmployeeList = () => {
       {employees.length === 0 ? (
         <div className="alert alert-info">No hay empleados registrados.</div>
       ) : (
-        <div className="table-responsive">
-          <table className="table table-striped table-hover">
-            <thead className="table-dark">
+        <div className="overflow-scroll table-responsive-md max-height: 100% rounded">
+          <table className="table table-striped table-hover table-bordered rounded">
+            <thead className="table-primary">
               <tr>
                 <th>ID</th>
                 <th>Nombre</th>
@@ -115,13 +115,13 @@ const EmployeeList = () => {
                       </Link>*/}
                       <Link 
                         to={`/employees/edit/${employee.id}`} 
-                        className="btn btn-sm btn-warning"
+                        className="btn btn-sm btn-warning bg-warning-subtle bg-gradient"
                       >
                         <i className="bi bi-pencil"></i>
                       </Link>
                       <button 
                         onClick={() => handleDelete(employee.id)} 
-                        className="btn btn-sm btn-danger"
+                        className="btn btn-sm btn-danger bg-gradient"
                       >
                         <i className="bi bi-trash"></i>
                       </button>

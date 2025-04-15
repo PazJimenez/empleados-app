@@ -64,7 +64,7 @@ export const employeeService = {
       throw error;
     }
   },
-  /*getById: async (id) => {
+  getById: async (id) => {
     console.log("Se encontraron los empleados hola", id);
     try {
       const response = await api.get(`/employee/${id}`);
@@ -74,20 +74,24 @@ export const employeeService = {
       console.log("No se encontraron empleado");
       throw error;
     }
-  },*/
+  },
   create: async (employee) => {
     try {
       const response = await api.post('/employee', employee);
+      console.log("Se encontraron los empleados", response);
       return response.data;
     } catch (error) {
+      console.log("No se encontraron empleado");
       throw error;
     }
   },
   update: async (id, employee) => {
     try {
       const response = await api.put(`/employee/${id}`, employee);
+      console.log("Se encontraron los empleados", response);
       return response.data;
     } catch (error) {
+      console.log("No se encontraron empleado");
       throw error;
     }
   },
